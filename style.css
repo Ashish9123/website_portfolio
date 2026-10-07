@@ -936,8 +936,7 @@ a:hover .roll > span, a:focus-visible .roll > span { transform: translateY(-100%
 /* =========================================================
    Reduced motion
    ========================================================= */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-  .editor-line { opacity: 1; transform: none; }
-  .grain { animation: none; }
-}
+/* Applied by script.js when the page is opened with ?motion=0 */
+.reduced *, .reduced *::before, .reduced *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+.reduced .editor-line { opacity: 1; transform: none; }
+.reduced .grain { animation: none; }

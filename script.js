@@ -9,8 +9,8 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const root = document.documentElement;
-  // ?motion=1 forces full motion (handy for previewing on machines with reduced motion enabled)
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches && !/[?&]motion=1/.test(location.search);
+  // Full motion is the default experience. Add ?motion=0 to the URL for a calm, reduced-motion version.
+  const reduced = /[?&]motion=0/.test(location.search);
   const isTouch = matchMedia('(hover: none), (pointer: coarse)').matches;
   const isMobile = () => innerWidth <= 768;
   const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
